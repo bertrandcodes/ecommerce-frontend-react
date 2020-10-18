@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  background-image: linear-gradient(260deg, #c37c72cc 0%, #ffdebd 100%);
 }
 ol,
 ul {
@@ -134,10 +135,6 @@ table {
   ========================================
 */
 
-body {
-  background-image: linear-gradient(260deg, #c37c72cc 0%, #ffdebd 100%);
-}
-
 .app-wrap {
   display: flex;
   flex-direction: column;
@@ -159,4 +156,21 @@ body {
     border-radius: 0;
     box-shadow: none;
   }
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
+  padding: 0 35px 0 35px;
+  border-bottom: 0.5px solid rgba(48, 48, 48, 0.5);
+}
+
+.logo {
+  width: 125px;
+  height: 30px;
+  background-image: url(./shop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
