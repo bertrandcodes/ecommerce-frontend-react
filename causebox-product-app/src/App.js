@@ -9,7 +9,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      show: false
+      show: false,
+      data: productData.products,
+      itemData: null
     }
   }
 
@@ -25,20 +27,28 @@ class App extends React.Component {
     }
   };
 
-  showModal = e => {
+  setItemData = (itemId) => {
+    const target = this.state.data.filter((item) => {
+      return item.id === itemId
+    })
     this.setState({
+      itemData: target[0],
       show: true
     })
-    console.log(this.state.show)
   }
 
+  // showModal = e => {
+  //   this.setState({
+  //     show: true
+  //   })
+  // }
+
   render() {
-    let productMarkup = productData.products.map(product =>
+    let productMarkup = this.state.data.map(product =>
       <div key={product.id} className="collection-item" onClick={e => {
-        this.showModal();
+        this.setItemData(product.id);
       }}>
         <div className="collection-image-container">
-          <ProductDetails show={this.state.show} />
           <img className="collection-image" src={product.previewImage} alt={product.title}>
           </img>
           <Unfilled />
@@ -55,6 +65,7 @@ class App extends React.Component {
       </div>)
     return (
       <div className="app-wrap">
+        <ProductDetails show={this.state.show} data={this.state.itemData} />
         <div className="app-header">
           <div className="logo" />
           <Cart />
