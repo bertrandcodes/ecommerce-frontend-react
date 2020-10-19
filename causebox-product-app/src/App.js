@@ -37,6 +37,12 @@ class App extends React.Component {
     })
   }
 
+  hideModal = e => {
+    this.setState({
+      show: false
+    });
+  };
+
   render() {
     let productMarkup = this.state.data.map(product =>
       <div key={product.id} className="collection-item" onClick={e => {
@@ -59,7 +65,7 @@ class App extends React.Component {
       </div>)
     return (
       <div className="app-wrap">
-        <ProductDetails show={this.state.show} data={this.state.itemData} />
+        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} />
         <div className="app-header">
           <div className="logo" />
           <Cart />

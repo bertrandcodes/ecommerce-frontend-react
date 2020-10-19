@@ -308,3 +308,25 @@ table {
     height: 100%;
   }
 }
+
+.detail-image-container {
+  position: relative;
+}
+
+.detail-image-container .unfilled {
+  position: absolute;
+  top: 25px;
+  right: 90px;
+  cursor: pointer;
+}
+
+.detail-image-container .cancel {
+  position: absolute;
+  top: 19px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.detail-image {
+  width: 100%;
+}
