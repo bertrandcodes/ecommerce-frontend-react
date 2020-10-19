@@ -25,7 +25,7 @@ class ProductDetails extends React.Component {
         this.setState({ data: nextProps.data })
     }
 
-    onClose = e => {
+    onClose = (e) => {
         this.props.onClose && this.props.onClose(e);
         this.setState({
             quanShow: false,
@@ -60,7 +60,7 @@ class ProductDetails extends React.Component {
         if (!this.props.show) {
             return <div className="modal">
                 <div className="detail-image-container">
-                    <img className="detail-image" src={previewImage}></img>
+                    <img className="detail-image" src={previewImage} alt={title}></img>
                     {this.props.favorites.has(id) ? <Filled /> : <Unfilled />}
                     <Cancel
                     />
@@ -81,7 +81,7 @@ class ProductDetails extends React.Component {
         }
         return <div className="modal open">
             <div className="detail-image-container">
-                <img className="detail-image" src={previewImage}></img>
+                <img className="detail-image" src={previewImage} alt={title}></img>
                 {this.props.favorites.has(id) ? <Filled onClick={() => { this.props.favorite(id) }} /> : <Unfilled onClick={() => { this.props.favorite(id) }} />}
                 <Cancel onClick={e => {
                     this.onClose(e);
@@ -107,11 +107,11 @@ class ProductDetails extends React.Component {
                             {this.state.quanShow ? <Up /> : <Down />}
                         </button>
                         {this.state.quanShow ? <div className="dropdown-content">
-                            <a href="#" onClick={() => this.changeQuan(1)}><span className="quan-num">1</span></a>
-                            <a href="#" onClick={() => this.changeQuan(2)}><span className="quan-num">2</span></a>
-                            <a href="#" onClick={() => this.changeQuan(3)}><span className="quan-num">3</span></a>
-                            <a href="#" onClick={() => this.changeQuan(4)}><span className="quan-num">4</span></a>
-                            <a href="#" onClick={() => this.changeQuan(5)}><span className="quan-num">5</span></a>
+                            <div onClick={() => this.changeQuan(1)}><span className="quan-num">1</span></div>
+                            <div onClick={() => this.changeQuan(2)}><span className="quan-num">2</span></div>
+                            <div onClick={() => this.changeQuan(3)}><span className="quan-num">3</span></div>
+                            <div onClick={() => this.changeQuan(4)}><span className="quan-num">4</span></div>
+                            <div onClick={() => this.changeQuan(5)}><span className="quan-num">5</span></div>
                         </div> : null}
                     </div>
                     <button onClick={() => { this.props.addCart(this.state.quantity) }} id="add-to-cart">Add to Cart

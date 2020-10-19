@@ -501,14 +501,14 @@ table {
   text-align: center;
 }
 
-.dropdown-content a {
+.dropdown-content div {
   color: black;
   padding: 12px 0;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown-content div:hover {
   background-color: #ddd;
 }
 

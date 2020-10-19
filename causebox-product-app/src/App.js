@@ -18,7 +18,7 @@ class App extends React.Component {
       data: productData.products,
       itemData: null,
       cartQuan: 0,
-      favorites: new Set
+      favorites: new Set()
     }
   }
 
