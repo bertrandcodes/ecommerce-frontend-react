@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       show: false,
       data: productData.products,
-      itemData: null
+      itemData: null,
+      cartQuan: 0
     }
   }
 
@@ -43,6 +44,12 @@ class App extends React.Component {
     });
   };
 
+  addCart = (quan) => {
+    this.setState({
+      cartQuan: this.state.cartQuan + quan
+    })
+  }
+
   render() {
     let productMarkup = this.state.data.map(product =>
       <div key={product.id} className="collection-item" onClick={e => {
@@ -65,10 +72,13 @@ class App extends React.Component {
       </div>)
     return (
       <div className="app-wrap">
-        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} getColor={this.getColor} />
+        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} getColor={this.getColor} addCart={this.addCart} />
         <div className="app-header">
           <div className="logo" />
-          <Cart />
+          <div className="cart-container">
+            <Cart />
+            {this.state.cartQuan > 0 ? <div className="cart-total"><div className="cart-num">{this.state.cartQuan}</div></div> : null}
+          </div>
         </div>
         <div className="collection-list">
           {productMarkup}

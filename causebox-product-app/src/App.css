@@ -184,6 +184,28 @@ table {
   background-size: contain;
 }
 
+.cart-container {
+  position: relative;
+}
+
+.cart-total {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #dd4d3a;
+  border-radius: 50%;
+  bottom: 15px;
+  left: 15px;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.cart-num {
+  padding-top: 1px;
+}
+
 /*
   ========================================
   Collections Page
