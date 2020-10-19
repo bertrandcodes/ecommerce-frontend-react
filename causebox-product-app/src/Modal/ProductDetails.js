@@ -13,7 +13,8 @@ class ProductDetails extends React.Component {
         this.state = {
             data: productData.products[0],
             quantity: 1,
-            quanShow: false
+            quanShow: false,
+            specsShow: true
         }
     }
 
@@ -23,9 +24,9 @@ class ProductDetails extends React.Component {
 
     onClose = e => {
         this.props.onClose && this.props.onClose(e);
-        // this.setState({
-        //     quanShow: false
-        // })
+        this.setState({
+            quanShow: false
+        })
     };
 
     toggleQuan = () => {
@@ -39,6 +40,12 @@ class ProductDetails extends React.Component {
             quantity: quan,
             quanShow: false
         })
+    }
+
+    toggleSpecs = () => {
+        this.setState({
+            specsShow: !this.state.specsShow
+        });
     }
 
     render() {
@@ -77,16 +84,26 @@ class ProductDetails extends React.Component {
                             {this.state.quanShow ? <Up /> : <Down />}
                         </button>
                         {this.state.quanShow ? <div className="dropdown-content">
-                            <a onClick={() => this.changeQuan(1)}>1</a>
-                            <a onClick={() => this.changeQuan(2)}>2</a>
-                            <a onClick={() => this.changeQuan(3)}>3</a>
-                            <a onClick={() => this.changeQuan(4)}>4</a>
-                            <a onClick={() => this.changeQuan(5)}>5</a>
+                            <a href="#" onClick={() => this.changeQuan(1)}><span className="quan-num">1</span></a>
+                            <a href="#" onClick={() => this.changeQuan(2)}><span className="quan-num">2</span></a>
+                            <a href="#" onClick={() => this.changeQuan(3)}><span className="quan-num">3</span></a>
+                            <a href="#" onClick={() => this.changeQuan(4)}><span className="quan-num">4</span></a>
+                            <a href="#" onClick={() => this.changeQuan(5)}><span className="quan-num">5</span></a>
                         </div> : null}
                     </div>
                     <button className="add-to-cart">Add to Cart
                     </button>
                 </div>
+                <hr />
+                <div className="specs-header">
+                    <p className="specs">SPECS</p>
+                    {this.state.specsShow ? <Up onClick={this.toggleSpecs} className="specs-arrow" /> : <Down onClick={this.toggleSpecs} className="specs-arrow" />}
+                </div>
+                {this.state.specsShow ?
+                    <div className="detail-specs">
+                        <Markup content={specs} />
+                    </div> : null}
+                <hr />
             </div>
         </div >;
     }

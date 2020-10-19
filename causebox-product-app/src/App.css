@@ -450,6 +450,10 @@ table {
   background-color: #ddd;
 }
 
+.quan-num {
+  margin-right: 10px;
+}
+
 .add-to-cart {
   width: 235px;
   height: 56px;
@@ -465,4 +469,32 @@ table {
 
 .add-to-cart:hover {
   color: #f0f0f0;
+}
+
+hr {
+  border: 1px solid #c4c4c4;
+  width: 327px;
+}
+
+.specs-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.specs {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+}
+
+.specs-arrow {
+  margin: 5px 5px 0 0;
+  cursor: pointer;
+}
+
+.detail-specs {
+  font-size: 16px;
+  line-height: 140%;
+  color: #303030;
+  margin: 8px 0 8px 0;
 }
