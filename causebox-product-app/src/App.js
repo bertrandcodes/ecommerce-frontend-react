@@ -65,20 +65,6 @@ class App extends React.Component {
         favorites: added
       })
     }
-    // const index = this.state.data.findIndex(ele => ele.id === id)
-    // if (this.state.data[id].favorite) {
-    //   let newData = [...this.state.data]
-    //   newData[index] = { ...newData[index], favorite: false }
-    //   this.setState({
-    //     data: newData
-    //   })
-    // } else {
-    //   let newData = [...this.state.data]
-    //   newData[index] = { ...newData[index], favorite: true }
-    //   this.setState({
-    //     data: newData
-    //   })
-    // }
   }
 
   render() {
@@ -89,7 +75,6 @@ class App extends React.Component {
         }} className="collection-image-container">
           <img className="collection-image" src={product.previewImage} alt={product.title}>
           </img>
-          {/* {product.favorite ? <Filled /> : <Unfilled />} */}
           {this.state.favorites.has(product.id) ? <Filled /> : <Unfilled />}
           {product.tags[0] ? <div className={`collection-tag ${this.getColor(product.tags[0])}`}>{product.tags[0].toUpperCase()}</div>
             : null}
@@ -106,7 +91,7 @@ class App extends React.Component {
       </div>)
     return (
       <div className="app-wrap">
-        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} getColor={this.getColor} addCart={this.addCart} favorite={this.handleFavorites} favorites={this.state.favorites}/>
+        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} getColor={this.getColor} addCart={this.addCart} favorite={this.handleFavorites} favorites={this.state.favorites} />
         <div className="app-header">
           <div className="logo" />
           <div className="cart-container">

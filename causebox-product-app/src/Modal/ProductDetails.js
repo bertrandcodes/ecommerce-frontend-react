@@ -56,9 +56,9 @@ class ProductDetails extends React.Component {
             <div key={id} className={`detail-tag ${this.props.getColor(tag)}`}>{tag.toUpperCase()}</div>
         )
         if (!this.props.show) {
-            return null;
+            return <div className="modal"></div>;
         }
-        return <div id="modal">
+        return <div className="modal open">
             <div className="detail-image-container">
                 <img className="detail-image" src={previewImage}></img>
                 {this.props.favorites.has(id) ? <Filled onClick={() => { this.props.favorite(id) }} /> : <Unfilled onClick={() => { this.props.favorite(id) }} />}
@@ -97,10 +97,10 @@ class ProductDetails extends React.Component {
                     </button>
                 </div>
                 <hr />
-                <div className="specs-box">
+                <div onClick={this.toggleSpecs} className="specs-box">
                     <div className="specs-header">
                         <p className="specs">SPECS</p>
-                        {this.state.specsShow ? <Up onClick={this.toggleSpecs} className="specs-arrow" /> : <Down onClick={this.toggleSpecs} className="specs-arrow" />}
+                        {this.state.specsShow ? <Up className="specs-arrow" /> : <Down className="specs-arrow" />}
                     </div>
                     {this.state.specsShow ?
                         <div className="detail-specs open">

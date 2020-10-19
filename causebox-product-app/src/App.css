@@ -318,21 +318,34 @@ table {
   ========================================
 */
 
-#modal {
+.modal {
+  position: fixed;
+  bottom: 91px;
+  overflow-y: scroll;
+  z-index: 1;
+  width: 375px;
+  height: 0;
+  background-color: white;
+  opacity: 0.5;
+  transition: all 0.3s ease-in;
+}
+
+.modal.open {
   position: fixed;
   overflow-y: scroll;
   z-index: 1;
   width: 375px;
   height: 82vh;
+  opacity: 1;
   background-color: white;
 }
 
-#modal::-webkit-scrollbar {
+.modal::-webkit-scrollbar {
   display: none;
 }
 
 @media screen and (max-width: 375px) {
-  #modal {
+  .modal {
     height: 100%;
   }
 }
