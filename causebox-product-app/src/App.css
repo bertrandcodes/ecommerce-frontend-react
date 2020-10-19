@@ -399,6 +399,11 @@ table {
   line-height: 22.4px;
 }
 
+.detail-description p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .cart-area {
   display: flex;
   margin: 34px 0 25px 0;
