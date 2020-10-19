@@ -108,6 +108,7 @@ section {
 body {
   line-height: 1;
   background-image: linear-gradient(260deg, #c37c72cc 0%, #ffdebd 100%);
+  font-family: sweet-sans-pro;
 }
 ol,
 ul {
@@ -158,6 +159,12 @@ table {
   }
 }
 
+/*
+  ========================================
+  Header
+  ========================================
+*/
+
 .app-header {
   display: flex;
   align-items: center;
@@ -170,7 +177,92 @@ table {
 .logo {
   width: 125px;
   height: 30px;
-  background-image: url(./shop.png);
+  background-image: url(./assets/shop.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+/*
+  ========================================
+  Collections Page
+  ========================================
+*/
+
+.collection-list {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.collection-list::-webkit-scrollbar {
+  display: none;
+}
+
+.collection-item {
+  width: 160px;
+  height: 300px;
+}
+
+.collection-image-container {
+  position: relative;
+  max-width: 160px;
+  height: auto;
+  width: auto;
+}
+
+.collection-image-container svg {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.collection-image {
+  max-width: 160px;
+}
+
+.collection-tag {
+  position: absolute;
+  bottom: 0;
+  height: 18px;
+  width: 118px;
+  line-height: 18px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #9ec7c7;
+}
+
+.collection-brand {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.collection-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.collection-prices {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.collection-sale {
+}
+
+.collection-original {
+  text-decoration: line-through;
+  color: #c6814a;
+}
+
+.collection-deal {
+  font-size: 16px;
+  color: #c6814a;
+  margin-top: 8px;
 }
