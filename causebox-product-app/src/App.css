@@ -348,6 +348,14 @@ table {
   cursor: pointer;
 }
 
+.detail-image-container .unfilled:hover {
+  fill: rgb(210, 210, 210);
+}
+
+.detail-image-container .unfilled:active {
+  fill: rgb(200, 200, 200);
+}
+
 .detail-image-container .filled {
   position: absolute;
   top: 25px;
