@@ -172,6 +172,7 @@ table {
   height: 55px;
   padding: 0 35px 0 35px;
   border-bottom: 0.5px solid rgba(48, 48, 48, 0.5);
+  margin-bottom: 30px;
 }
 
 .logo {
@@ -191,6 +192,9 @@ table {
 .collection-list {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .collection-list::-webkit-scrollbar {
