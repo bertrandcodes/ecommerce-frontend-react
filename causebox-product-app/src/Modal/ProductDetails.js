@@ -56,7 +56,26 @@ class ProductDetails extends React.Component {
             <div key={id} className={`detail-tag ${this.props.getColor(tag)}`}>{tag.toUpperCase()}</div>
         )
         if (!this.props.show) {
-            return <div className="modal"></div>;
+            return <div className="modal">
+                <div className="detail-image-container">
+                    <img className="detail-image" src={previewImage}></img>
+                    {this.props.favorites.has(id) ? <Filled /> : <Unfilled />}
+                    <Cancel
+                    />
+                </div>
+                <div className="detail-body">
+                    <div className="detail-tags">
+                        {detailTags}
+                    </div>
+                    <div className="detail-brand">{brand.toUpperCase()}</div>
+                    <div className="detail-title">{title}</div>
+                    <div className="detail-prices">
+                        <div className="detail-sale">${currentPrice.toFixed(2)}</div>
+                        <div className="detail-original">${retailValue.toFixed(2)}</div>
+                        <div className="detail-deal">({Math.round((retailValue - currentPrice) / retailValue * 100)}% off)</div>
+                    </div>
+                </div>
+            </div>;
         }
         return <div className="modal open">
             <div className="detail-image-container">

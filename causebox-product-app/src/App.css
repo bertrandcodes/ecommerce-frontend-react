@@ -326,7 +326,6 @@ table {
   width: 375px;
   height: 0;
   background-color: white;
-  opacity: 0.5;
   transition: all 0.3s ease-in;
 }
 
@@ -336,7 +335,6 @@ table {
   z-index: 1;
   width: 375px;
   height: 82vh;
-  opacity: 1;
   background-color: white;
 }
 
