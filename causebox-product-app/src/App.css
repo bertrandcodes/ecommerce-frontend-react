@@ -203,7 +203,7 @@ table {
 
 .collection-item {
   width: 160px;
-  height: 300px;
+  height: 350px;
 }
 
 .collection-image-container {
@@ -247,17 +247,18 @@ table {
   font-size: 16px;
   font-weight: 400;
   margin-top: 8px;
+  width: 120px;
 }
 
 .collection-prices {
   display: flex;
-  justify-content: space-between;
   width: 100px;
   font-size: 16px;
   margin-top: 8px;
 }
 
 .collection-sale {
+  margin-right: 10px;
 }
 
 .collection-original {

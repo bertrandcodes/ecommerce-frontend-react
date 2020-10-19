@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { ReactComponent as Cart } from './assets/cart.svg';
 import { ReactComponent as Unfilled } from './assets/unfilled-heart.svg';
+import productData from './catalog.json';
 
 class App extends React.Component {
   constructor() {
@@ -9,7 +10,25 @@ class App extends React.Component {
     this.state = {
     }
   }
+
+
   render() {
+    let productMarkup = productData.products.map(product =>
+      <div key={product.id} className="collection-item">
+        <div className="collection-image-container">
+          <img className="collection-image" src={product.previewImage} alt={product.title}>
+          </img>
+          <Unfilled />
+          <div className="collection-tag">EDITOR'S PICKS</div>
+        </div>
+        <div className="collection-brand">{product.brand.toUpperCase()}</div>
+        <div className="collection-title">{product.title}</div>
+        <div className="collection-prices">
+          <div className="collection-sale">${product.currentPrice.toFixed(2)}</div>
+          <div className="collection-original">${product.retailValue.toFixed(2)}</div>
+        </div>
+        <div className="collection-deal">({Math.round((product.retailValue - product.currentPrice) / product.retailValue * 100)}% off)</div>
+      </div>)
     return (
       <div className="app-wrap">
         <div className="app-header">
@@ -17,100 +36,7 @@ class App extends React.Component {
           <Cart />
         </div>
         <div className="collection-list">
-
-          <div className="collection-item">
-            <div className="collection-image-container">
-              <img className="collection-image" src="https://s3-us-west-2.amazonaws.com/causebox/uploads/Ever-Eco-On-The-Go-Straw-Kit-Stainless-Steel-01.jpg">
-              </img>
-              <Unfilled />
-              <div className="collection-tag">EDITOR'S PICKS</div>
-            </div>
-            <div className="collection-brand">SOFTEN</div>
-            <div className="collection-title">Heather Bath Towel Set</div>
-            <div className="collection-prices">
-              <div className="collection-sale">$3.50</div>
-              <div className="collection-original">$5.25</div>
-            </div>
-            <div className="collection-deal">(25% off)</div>
-          </div>
-
-          <div className="collection-item">
-            <div className="collection-image-container">
-              <img className="collection-image" src="https://s3-us-west-2.amazonaws.com/causebox/uploads/Ever-Eco-On-The-Go-Straw-Kit-Stainless-Steel-01.jpg">
-              </img>
-              <Unfilled />
-              <div className="collection-tag">EDITOR'S PICKS</div>
-            </div>
-            <div className="collection-brand">SOFTEN</div>
-            <div className="collection-title">Heather Bath Towel Set</div>
-            <div className="collection-prices">
-              <div className="collection-sale">$3.50</div>
-              <div className="collection-original">$5.25</div>
-            </div>
-            <div className="collection-deal">(25% off)</div>
-          </div>
-
-          <div className="collection-item">
-            <div className="collection-image-container">
-              <img className="collection-image" src="https://s3-us-west-2.amazonaws.com/causebox/uploads/Ever-Eco-On-The-Go-Straw-Kit-Stainless-Steel-01.jpg">
-              </img>
-              <Unfilled />
-              <div className="collection-tag">EDITOR'S PICKS</div>
-            </div>
-            <div className="collection-brand">SOFTEN</div>
-            <div className="collection-title">Heather Bath Towel Set</div>
-            <div className="collection-prices">
-              <div className="collection-sale">$3.50</div>
-              <div className="collection-original">$5.25</div>
-            </div>
-            <div className="collection-deal">(25% off)</div>
-          </div>
-
-          <div className="collection-item">
-            <div className="collection-image-container">
-              <img className="collection-image" src="https://s3-us-west-2.amazonaws.com/causebox/uploads/Ever-Eco-On-The-Go-Straw-Kit-Stainless-Steel-01.jpg">
-              </img>
-              <Unfilled />
-              <div className="collection-tag">EDITOR'S PICKS</div>
-            </div>
-            <div className="collection-brand">SOFTEN</div>
-            <div className="collection-title">Heather Bath Towel Set</div>
-            <div className="collection-prices">
-              <div className="collection-sale">$3.50</div>
-              <div className="collection-original">$5.25</div>
-            </div>
-            <div className="collection-deal">(25% off)</div>
-          </div>
-          <div className="collection-item">
-            <div className="collection-image-container">
-              <img className="collection-image" src="https://s3-us-west-2.amazonaws.com/causebox/uploads/Ever-Eco-On-The-Go-Straw-Kit-Stainless-Steel-01.jpg">
-              </img>
-              <Unfilled />
-              <div className="collection-tag">EDITOR'S PICKS</div>
-            </div>
-            <div className="collection-brand">SOFTEN</div>
-            <div className="collection-title">Heather Bath Towel Set</div>
-            <div className="collection-prices">
-              <div className="collection-sale">$3.50</div>
-              <div className="collection-original">$5.25</div>
-            </div>
-            <div className="collection-deal">(25% off)</div>
-          </div>
-          <div className="collection-item">
-            <div className="collection-image-container">
-              <img className="collection-image" src="https://s3-us-west-2.amazonaws.com/causebox/uploads/Ever-Eco-On-The-Go-Straw-Kit-Stainless-Steel-01.jpg">
-              </img>
-              <Unfilled />
-              <div className="collection-tag">EDITOR'S PICKS</div>
-            </div>
-            <div className="collection-brand">SOFTEN</div>
-            <div className="collection-title">Heather Bath Towel Set</div>
-            <div className="collection-prices">
-              <div className="collection-sale">$3.50</div>
-              <div className="collection-original">$5.25</div>
-            </div>
-            <div className="collection-deal">(25% off)</div>
-          </div>
+          {productMarkup}
         </div>
       </div>
     );
