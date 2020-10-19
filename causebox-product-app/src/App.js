@@ -3,19 +3,30 @@ import './App.css';
 import { ReactComponent as Cart } from './assets/cart.svg';
 import { ReactComponent as Unfilled } from './assets/unfilled-heart.svg';
 import productData from './catalog.json';
+import ProductDetails from './Modal/ProductDetails';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      show: false
     }
   }
 
+  showModal = e => {
+    this.setState({
+      show: true
+    })
+    console.log(this.state.show)
+  }
 
   render() {
     let productMarkup = productData.products.map(product =>
-      <div key={product.id} className="collection-item">
+      <div key={product.id} className="collection-item" onClick={e => {
+        this.showModal();
+      }}>
         <div className="collection-image-container">
+          <ProductDetails show={this.state.show} />
           <img className="collection-image" src={product.previewImage} alt={product.title}>
           </img>
           <Unfilled />

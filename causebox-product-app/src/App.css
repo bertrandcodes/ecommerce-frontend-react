@@ -194,7 +194,7 @@ table {
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .collection-list::-webkit-scrollbar {
