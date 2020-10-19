@@ -3,12 +3,17 @@ import { ReactComponent as Unfilled } from '../assets/unfilled-heart.svg';
 import { ReactComponent as Cancel } from '../assets/cancel.svg';
 import productData from '../catalog.json';
 import { Markup } from 'interweave';
+import { ReactComponent as Up } from '../assets/up-pointer.svg';
+import { ReactComponent as Down } from '../assets/down-pointer.svg';
+
 
 class ProductDetails extends React.Component {
     constructor() {
         super();
         this.state = {
-            data: productData.products[0]
+            data: productData.products[0],
+            quantity: 1,
+            quanShow: false
         }
     }
 
@@ -18,7 +23,23 @@ class ProductDetails extends React.Component {
 
     onClose = e => {
         this.props.onClose && this.props.onClose(e);
+        // this.setState({
+        //     quanShow: false
+        // })
     };
+
+    toggleQuan = () => {
+        this.setState({
+            quanShow: !this.state.quanShow
+        });
+    };
+
+    changeQuan = (quan) => {
+        this.setState({
+            quantity: quan,
+            quanShow: false
+        })
+    }
 
     render() {
         const { previewImage, tags, brand, title, currentPrice, retailValue, description, specs } = this.state.data
@@ -49,6 +70,22 @@ class ProductDetails extends React.Component {
                 </div>
                 <div className="detail-description">
                     <Markup content={description} />
+                </div>
+                <div className="cart-area">
+                    <div className="dropdown">
+                        <button onClick={this.toggleQuan} className="quantity-selector"><span className="current-quantity">{this.state.quantity}</span>
+                            {this.state.quanShow ? <Up /> : <Down />}
+                        </button>
+                        {this.state.quanShow ? <div className="dropdown-content">
+                            <a onClick={() => this.changeQuan(1)}>1</a>
+                            <a onClick={() => this.changeQuan(2)}>2</a>
+                            <a onClick={() => this.changeQuan(3)}>3</a>
+                            <a onClick={() => this.changeQuan(4)}>4</a>
+                            <a onClick={() => this.changeQuan(5)}>5</a>
+                        </div> : null}
+                    </div>
+                    <button className="add-to-cart">Add to Cart
+                    </button>
                 </div>
             </div>
         </div >;
