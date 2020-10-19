@@ -353,7 +353,7 @@ table {
 }
 
 .detail-image-container .unfilled:active {
-  fill: rgb(200, 200, 200);
+  fill: rgb(190, 190, 190);
 }
 
 .detail-image-container .filled {
@@ -519,7 +519,12 @@ hr {
   width: 327px;
 }
 
+.specs-box {
+  /* transition: all 1s ease-out; */
+}
+
 .specs-header {
+  position: relative;
   display: flex;
   justify-content: space-between;
 }
@@ -539,5 +544,16 @@ hr {
   font-size: 16px;
   line-height: 140%;
   color: #303030;
-  margin: 8px 0 8px 0;
+  margin: 5px 0 8px 0;
+  max-height: 0;
+  opacity: 0;
+  overflow-y: hidden;
+  transition: all 0.2s ease;
+}
+
+.detail-specs.open {
+  max-height: 1000px;
+  opacity: 1;
+  overflow-y: auto;
+  transition: all 1s ease-out;
 }

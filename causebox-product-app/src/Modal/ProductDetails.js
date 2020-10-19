@@ -97,14 +97,16 @@ class ProductDetails extends React.Component {
                     </button>
                 </div>
                 <hr />
-                <div className="specs-header">
-                    <p className="specs">SPECS</p>
-                    {this.state.specsShow ? <Up onClick={this.toggleSpecs} className="specs-arrow" /> : <Down onClick={this.toggleSpecs} className="specs-arrow" />}
+                <div className="specs-box">
+                    <div className="specs-header">
+                        <p className="specs">SPECS</p>
+                        {this.state.specsShow ? <Up onClick={this.toggleSpecs} className="specs-arrow" /> : <Down onClick={this.toggleSpecs} className="specs-arrow" />}
+                    </div>
+                    {this.state.specsShow ?
+                        <div className="detail-specs open">
+                            <Markup content={specs} />
+                        </div> : <div className="detail-specs"><Markup content={specs} /></div>}
                 </div>
-                {this.state.specsShow ?
-                    <div className="detail-specs">
-                        <Markup content={specs} />
-                    </div> : null}
                 <hr />
             </div>
         </div >;
