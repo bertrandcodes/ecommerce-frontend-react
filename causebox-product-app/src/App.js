@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import productData from './catalog.json';
+import ProductDetails from './Modal/ProductDetails';
+
 import { ReactComponent as Cart } from './assets/cart.svg';
 import { ReactComponent as Unfilled } from './assets/unfilled-heart.svg';
 import { ReactComponent as Filled } from './assets/filled-heart.svg';
-import productData from './catalog.json';
-import ProductDetails from './Modal/ProductDetails';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -41,9 +42,9 @@ class App extends React.Component {
       itemData: target[0],
       show: true
     })
-  }
+  };
 
-  hideModal = e => {
+  hideModal = () => {
     this.setState({
       show: false
     });
@@ -55,7 +56,7 @@ class App extends React.Component {
       show: false
     })
     toast.warn("Product has been added to cart ✅")
-  }
+  };
 
   handleFavorites = (id) => {
     if (this.state.favorites.has(id)) {
@@ -70,7 +71,7 @@ class App extends React.Component {
         favorites: added
       })
     }
-  }
+  };
 
   render() {
     let productMarkup = this.state.data.map(product =>

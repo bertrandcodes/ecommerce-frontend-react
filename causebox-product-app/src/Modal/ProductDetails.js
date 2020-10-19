@@ -1,11 +1,13 @@
 import React from 'react';
+import productData from '../catalog.json';
+
+import { ReactComponent as Cancel } from '../assets/cancel.svg';
 import { ReactComponent as Unfilled } from '../assets/unfilled-heart.svg';
 import { ReactComponent as Filled } from '../assets/filled-heart.svg';
-import { ReactComponent as Cancel } from '../assets/cancel.svg';
-import productData from '../catalog.json';
-import { Markup } from 'interweave';
 import { ReactComponent as Up } from '../assets/up-pointer.svg';
 import { ReactComponent as Down } from '../assets/down-pointer.svg';
+
+import { Markup } from 'interweave';
 
 
 class ProductDetails extends React.Component {
@@ -42,13 +44,13 @@ class ProductDetails extends React.Component {
             quantity: quan,
             quanShow: false
         })
-    }
+    };
 
     toggleSpecs = () => {
         this.setState({
             specsShow: !this.state.specsShow
         });
-    }
+    };
 
     render() {
         const { id, previewImage, tags, brand, title, currentPrice, retailValue, description, specs } = this.state.data
