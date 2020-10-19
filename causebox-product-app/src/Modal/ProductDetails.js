@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as Unfilled } from '../assets/unfilled-heart.svg';
+import { ReactComponent as Filled } from '../assets/filled-heart.svg';
 import { ReactComponent as Cancel } from '../assets/cancel.svg';
 import productData from '../catalog.json';
 import { Markup } from 'interweave';
@@ -50,7 +51,7 @@ class ProductDetails extends React.Component {
     }
 
     render() {
-        const { previewImage, tags, brand, title, currentPrice, retailValue, description, specs } = this.state.data
+        const { id, previewImage, tags, brand, title, currentPrice, retailValue, description, specs } = this.state.data
         let detailTags = tags.map((tag, id) =>
             <div key={id} className={`detail-tag ${this.props.getColor(tag)}`}>{tag.toUpperCase()}</div>
         )
@@ -60,7 +61,7 @@ class ProductDetails extends React.Component {
         return <div id="modal">
             <div className="detail-image-container">
                 <img className="detail-image" src={previewImage}></img>
-                <Unfilled />
+                {this.props.favorites.has(id) ? <Filled onClick={() => { this.props.favorite(id) }} /> : <Unfilled onClick={() => { this.props.favorite(id) }} />}
                 <Cancel onClick={e => {
                     this.onClose(e);
                 }} />

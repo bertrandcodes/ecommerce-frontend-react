@@ -227,7 +227,6 @@ table {
 .collection-item {
   width: 160px;
   height: 350px;
-  cursor: pointer;
 }
 
 .collection-image-container {
@@ -246,6 +245,7 @@ table {
 
 .collection-image {
   max-width: 160px;
+  cursor: pointer;
 }
 
 .collection-tag {
@@ -287,6 +287,7 @@ table {
   font-weight: 400;
   margin-top: 8px;
   width: 120px;
+  cursor: pointer;
 }
 
 .collection-prices {
@@ -341,6 +342,13 @@ table {
 }
 
 .detail-image-container .unfilled {
+  position: absolute;
+  top: 25px;
+  right: 80px;
+  cursor: pointer;
+}
+
+.detail-image-container .filled {
   position: absolute;
   top: 25px;
   right: 80px;
