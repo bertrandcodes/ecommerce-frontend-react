@@ -25,7 +25,8 @@ class ProductDetails extends React.Component {
     onClose = e => {
         this.props.onClose && this.props.onClose(e);
         this.setState({
-            quanShow: false
+            quanShow: false,
+            quantity: 1
         })
     };
 
