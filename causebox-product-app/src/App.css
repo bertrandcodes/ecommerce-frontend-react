@@ -205,6 +205,7 @@ table {
 .collection-item {
   width: 160px;
   height: 350px;
+  cursor: pointer;
 }
 
 .collection-image-container {
@@ -316,7 +317,7 @@ table {
 .detail-image-container .unfilled {
   position: absolute;
   top: 25px;
-  right: 90px;
+  right: 80px;
   cursor: pointer;
 }
 
@@ -329,4 +330,66 @@ table {
 
 .detail-image {
   width: 100%;
+}
+
+.detail-body {
+  padding: 50px 25px 0 25px;
+}
+
+.detail-tags {
+  display: flex;
+}
+
+.detail-tag {
+  height: 18px;
+  width: 118px;
+  line-height: 18px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.detail-brand {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #303030;
+  margin-top: 16px;
+}
+
+.detail-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33.6px;
+  color: #303030;
+}
+
+.detail-prices {
+  display: flex;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25.2px;
+  margin: 5px 10px 0 0;
+}
+
+.detail-sale {
+  margin-right: 8px;
+}
+
+.detail-original {
+  margin-right: 8px;
+  color: #9d9d9d;
+}
+
+.detail-deal {
+  color: #9d9d9d;
+}
+
+.detail-description {
+  margin-top: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
 }

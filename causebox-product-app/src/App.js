@@ -65,7 +65,7 @@ class App extends React.Component {
       </div>)
     return (
       <div className="app-wrap">
-        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} />
+        <ProductDetails show={this.state.show} onClose={this.hideModal} data={this.state.itemData} getColor={this.getColor} />
         <div className="app-header">
           <div className="logo" />
           <Cart />
