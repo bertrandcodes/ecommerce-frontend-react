@@ -234,7 +234,22 @@ table {
   color: white;
   font-weight: bold;
   font-size: 12px;
+}
+
+.blue {
   background-color: #9ec7c7;
+}
+
+.purple {
+  background-color: #9f74c2;
+}
+
+.pink {
+  background-color: #e5a98f;
+}
+
+.red {
+  background-color: #cb5744;
 }
 
 .collection-brand {

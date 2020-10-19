@@ -13,6 +13,18 @@ class App extends React.Component {
     }
   }
 
+  getColor = (tag) => {
+    if (tag === "Editor's Picks") {
+      return "blue";
+    } else if (tag === "Top Ten") {
+      return "purple";
+    } else if (tag === "Daily Deals") {
+      return "pink";
+    } else if (tag === "Olmost Out") {
+      return "red";
+    }
+  };
+
   showModal = e => {
     this.setState({
       show: true
@@ -30,7 +42,7 @@ class App extends React.Component {
           <img className="collection-image" src={product.previewImage} alt={product.title}>
           </img>
           <Unfilled />
-          {product.tags[0] ? <div className="collection-tag">{product.tags[0].toUpperCase()}</div>
+          {product.tags[0] ? <div className={`collection-tag ${this.getColor(product.tags[0])}`}>{product.tags[0].toUpperCase()}</div>
             : null}
         </div>
         <div className="collection-brand">{product.brand.toUpperCase()}</div>
