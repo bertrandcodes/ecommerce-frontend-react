@@ -19,7 +19,8 @@ class App extends React.Component {
           <img className="collection-image" src={product.previewImage} alt={product.title}>
           </img>
           <Unfilled />
-          <div className="collection-tag">EDITOR'S PICKS</div>
+          {product.tags[0] ? <div className="collection-tag">{product.tags[0].toUpperCase()}</div>
+            : null}
         </div>
         <div className="collection-brand">{product.brand.toUpperCase()}</div>
         <div className="collection-title">{product.title}</div>
