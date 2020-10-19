@@ -177,6 +177,12 @@ table {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 375px) {
+  .app-header {
+    padding: 0 35px 0 35px;
+  }
+}
+
 .logo {
   width: 125px;
   height: 30px;
