@@ -1,3 +1,7 @@
+## Welcome to my CAUSEBOX app!
+
+View live: https://5f8e1c4c63eb0f149586acf0--boxofcause.netlify.app/#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
