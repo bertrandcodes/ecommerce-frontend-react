@@ -27,7 +27,7 @@ class App extends React.Component {
     }
   };
 
-  setItemData = (itemId) => {
+  handleModal = (itemId) => {
     const target = this.state.data.filter((item) => {
       return item.id === itemId
     })
@@ -37,16 +37,10 @@ class App extends React.Component {
     })
   }
 
-  // showModal = e => {
-  //   this.setState({
-  //     show: true
-  //   })
-  // }
-
   render() {
     let productMarkup = this.state.data.map(product =>
       <div key={product.id} className="collection-item" onClick={e => {
-        this.setItemData(product.id);
+        this.handleModal(product.id);
       }}>
         <div className="collection-image-container">
           <img className="collection-image" src={product.previewImage} alt={product.title}>

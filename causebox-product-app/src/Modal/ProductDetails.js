@@ -8,11 +8,12 @@ class ProductDetails extends React.Component {
     }
 
     render() {
-        let { title, brand, previewImage, description, specs } = this.props.data
         if (!this.props.show) {
             return null;
         }
-        return <div>modal</div>;
+        return <div id="modal">
+            Hello
+        </div>;
     }
 }
 

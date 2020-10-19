@@ -109,6 +109,7 @@ body {
   line-height: 1;
   background-image: linear-gradient(260deg, #c37c72cc 0%, #ffdebd 100%);
   font-family: sweet-sans-pro;
+  overflow-y: hidden;
 }
 ol,
 ul {
@@ -140,8 +141,8 @@ table {
   display: flex;
   flex-direction: column;
   max-width: 375px;
-  height: 90vh;
-  margin: 5vh auto 5vh auto;
+  height: 82vh;
+  margin: 4vh auto 5vh auto;
   border: 10px solid rgba(0, 0, 0, 0.8);
   border-bottom-width: 70px;
   border-radius: 10px;
@@ -285,4 +286,25 @@ table {
   font-size: 16px;
   color: #c6814a;
   margin-top: 8px;
+}
+
+/*
+  ========================================
+  Modal
+  ========================================
+*/
+
+#modal {
+  position: fixed;
+  z-index: 1;
+  width: 375px;
+  height: 82vh;
+  overflow: auto;
+  background-color: white;
+}
+
+@media screen and (max-width: 375px) {
+  #modal {
+    height: 100%;
+  }
 }
