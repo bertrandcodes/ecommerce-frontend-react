@@ -138,6 +138,7 @@ table {
 */
 
 .app-wrap {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 375px;
@@ -319,18 +320,19 @@ table {
 */
 
 .modal {
-  position: fixed;
-  bottom: 91px;
+  position: absolute;
   overflow-y: scroll;
   z-index: 1;
   width: 375px;
   height: 0;
+  bottom: 0;
   background-color: white;
   transition: all 0.3s ease-in;
 }
 
 .modal.open {
-  position: fixed;
+  position: absolute;
+  bottom: 0;
   overflow-y: scroll;
   z-index: 1;
   width: 375px;
@@ -343,7 +345,7 @@ table {
 }
 
 @media screen and (max-width: 375px) {
-  .modal {
+  .modal.open {
     height: 100%;
   }
 }
@@ -508,7 +510,7 @@ table {
   margin-right: 10px;
 }
 
-.add-to-cart {
+#add-to-cart {
   width: 235px;
   height: 56px;
   background: #f39c01;
@@ -521,17 +523,13 @@ table {
   cursor: pointer;
 }
 
-.add-to-cart:hover {
+#add-to-cart:hover {
   color: #f0f0f0;
 }
 
 hr {
   border: 1px solid #c4c4c4;
   width: 327px;
-}
-
-.specs-box {
-  /* transition: all 1s ease-out; */
 }
 
 .specs-header {

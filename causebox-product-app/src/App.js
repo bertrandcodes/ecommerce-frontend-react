@@ -6,6 +6,9 @@ import { ReactComponent as Filled } from './assets/filled-heart.svg';
 import productData from './catalog.json';
 import ProductDetails from './Modal/ProductDetails';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -48,8 +51,10 @@ class App extends React.Component {
 
   addCart = (quan) => {
     this.setState({
-      cartQuan: this.state.cartQuan + quan
+      cartQuan: this.state.cartQuan + quan,
+      show: false
     })
+    toast.warn("Product has been added to cart ✅")
   }
 
   handleFavorites = (id) => {
@@ -102,6 +107,11 @@ class App extends React.Component {
         <div className="collection-list">
           {productMarkup}
         </div>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          limit={1} />
       </div>
     );
   }
