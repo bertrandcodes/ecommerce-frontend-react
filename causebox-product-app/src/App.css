@@ -217,8 +217,8 @@ table {
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 0 20px 20px 20px;
+  justify-content: space-between;
+  padding: 0 23px 23px 23px;
 }
 
 .collection-list::-webkit-scrollbar {
