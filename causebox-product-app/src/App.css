@@ -174,13 +174,6 @@ table {
   height: 55px;
   padding: 13px 35px 12px 35px;
   border-bottom: 0.5px solid rgba(48, 48, 48, 0.5);
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 375px) {
-  .app-header {
-    padding: 0 35px 0 35px;
-  }
 }
 
 .logo {
@@ -225,6 +218,7 @@ table {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 0 20px 20px 20px;
 }
 
 .collection-list::-webkit-scrollbar {
@@ -234,6 +228,7 @@ table {
 .collection-item {
   width: 160px;
   height: 350px;
+  margin-top: 40px;
 }
 
 .collection-image-container {
@@ -287,14 +282,16 @@ table {
   font-size: 12px;
   font-weight: 500;
   margin-top: 10px;
+  line-height: 140%;
 }
 
 .collection-title {
   font-size: 16px;
   font-weight: 400;
-  margin-top: 8px;
+  margin-top: 6px;
   width: 120px;
   cursor: pointer;
+  line-height: 140%;
 }
 
 .collection-prices {
