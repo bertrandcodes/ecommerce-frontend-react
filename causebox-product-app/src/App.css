@@ -228,7 +228,7 @@ table {
 .collection-item {
   width: 160px;
   height: 350px;
-  margin-top: 40px;
+  margin: 40px 0 -10px 0;
 }
 
 .collection-image-container {
