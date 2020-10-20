@@ -1,6 +1,6 @@
 ## Welcome to my CAUSEBOX app!
 
-View most recent live site here: https://5f8eab0e9807aaf2b1cc49ef--boxofcause.netlify.app
+View most recent live site here: https://5f8f51afb50502178c1724eb--boxofcause.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
