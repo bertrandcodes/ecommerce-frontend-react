@@ -496,6 +496,7 @@ table {
   width: 77px;
   z-index: 1;
   text-align: center;
+  cursor: pointer;
 }
 
 .dropdown-content div {
