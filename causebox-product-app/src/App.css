@@ -569,3 +569,7 @@ hr {
   overflow-y: auto;
   transition: all 1s ease-out;
 }
+
+.detail-specs.open::-webkit-scrollbar {
+  display: none;
+}
