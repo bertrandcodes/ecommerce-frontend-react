@@ -114,7 +114,7 @@ class ProductDetails extends React.Component {
                             <div onClick={() => this.changeQuan(5)}><span className="quan-num">5</span></div>
                         </div> : null}
                     </div>
-                    <button onClick={() => { this.props.addCart(this.state.quantity) }} id="add-to-cart">Add to Cart
+                    <button onClick={() => { this.props.addCart(this.state.quantity); this.onClose() }} id="add-to-cart">Add to Cart
                     </button>
                 </div>
                 <hr />

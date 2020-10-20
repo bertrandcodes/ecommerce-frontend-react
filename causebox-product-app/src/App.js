@@ -52,8 +52,7 @@ class App extends React.Component {
 
   addCart = (quan) => {
     this.setState({
-      cartQuan: this.state.cartQuan + quan,
-      show: false
+      cartQuan: this.state.cartQuan + quan
     })
     toast.warn("Product has been added to cart ✅")
   };

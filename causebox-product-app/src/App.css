@@ -567,7 +567,7 @@ hr {
   max-height: 1000px;
   opacity: 1;
   overflow-y: auto;
-  transition: all 1s ease-out;
+  transition: all 1s ease;
 }
 
 .detail-specs.open::-webkit-scrollbar {
