@@ -1,10 +1,10 @@
-## Welcome to my CAUSEBOX app!
+## Welcome to my React CAUSEBOX app!
 
 View most recent live site here: https://5f8f51afb50502178c1724eb--boxofcause.netlify.app/
 
 Same project, but built with Vue.js: https://github.com/bertrandcodes/ecommerce-product-page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live link to the Vue version: https://5f8fed78065839b7de9f4085--vuebox.netlify.app/
 
 ## Available Scripts
 
