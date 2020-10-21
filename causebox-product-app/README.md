@@ -2,6 +2,8 @@
 
 View most recent live site here: https://5f8f51afb50502178c1724eb--boxofcause.netlify.app/
 
+Same project, but built with Vue.js: https://github.com/bertrandcodes/ecommerce-product-page
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
